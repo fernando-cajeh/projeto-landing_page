@@ -1,0 +1,163 @@
+body {
+    background-image: url(./assets/bg-mobile.jpg);/* link da imagem de fundo*/
+    background-repeat: no-repeat;   /* para não repetir a imagem de fundo*/
+    background-position: top center;    /*para centralizar a imagem de fundo, começando do topo*/
+    background-size: cover; /* faz a imagem de fundo preencher toda a tela*/
+}
+
+* { /* resetando o css do navegador*/
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box; /* ajusta o tamanho da caixa a partir da borda*/
+}
+
+:root {     /*sudo-selector para criar as variáveis de cores */
+    --text-color: white;    /* variável da cor branca */
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.50);
+    --surface-color: rgba(255,255,255,0.1);
+    --switch-bg-url: url(./assets/moon-stars.svg);/*variável do desenho do botão*/
+}
+
+.light {    /* ajustando a cor quando mudar o tema */
+    --text-color: black;
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+    --stroke-color: rgba(0,0,0,0.5);
+    --surface-color: rgba(0,0,0,0.05);
+    --switch-bg-url: url(./assets/sun.svg);/*variável do desenho do botão*/
+}
+
+body {
+    background: var(--bg-url) no-repeat top center/cover; /* variavel da cor do background*/
+}
+
+body * { /* seleciona todos os elementos do body*/
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color); /* cor das fontes*/
+}
+
+#container {    /* ajuste da borda do profile*/
+    /*border: 1px solid green;*/
+    width: 360px;
+    margin: 56px auto 0px;   /* coloca margem de 56px em cima, auto nas laterais e 0  em baixo*/
+    padding: 0px 24px;    /* padding de 0px em cima e em baixo e 24px nas laterais*/
+}
+
+/*profile*/
+#profile {  /* posicionamento dos elementos do profile*/
+    text-align: center; /* centralizando a imagem na div*/
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;   /* largura da imagem*/
+    margin: auto;
+}
+
+#profile p {
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    margin-top: 8px;
+}
+
+/*switch*/
+
+#switch{
+    position: relative;
+    margin-bottom: 16px;
+    width: 64px;
+    margin: 24px auto;
+}
+#switch button { /* ajuste do botão dia e noite*/
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center; /*ajuste da imagem do botão*/
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;/*coloca o botão 1 camada acima da barrinha*/
+    top: 50%;/*posicionando o botão no centro da barrinha verticalmente*/
+    left: 0;
+    z-index: 1;/*coloca o botão na camada 1 do eixo z*/
+    transform: translateY(-50%);/*posicionando o botão no centro da barrinhaverticalmente*/
+}
+
+.light #switch button {
+    right: 0;/* coloca o botão á direita da div*/
+    left: initial;
+}
+
+#switch span { /*ajuste da barrinha do botão*/
+    display: block;/*possibilita o ajuste da largura*/
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);/*webkit para funcionar em outros navegadores*/
+}
+
+/* links */
+ul {
+    list-style: none; /* tira as marcações */
+    display: flex; /* habilita outras funcionalidades */
+    flex-direction: column;
+    gap: 16px; /* espaçamento entre os links */
+    
+}
+
+ul li a {
+    /*border: 1px solid green;*/
+    display: flex;
+    align-items: center; /* alinha na horizontal */
+    justify-content: center; /* alinha na vertical */
+    padding: 16px 24px; /* espaçamento entre o conteúdo e a borda */
+    
+    background: var(--surface-color); /* cor de fundo dos links */
+    
+    border: 1px solid var(--stroke-color); /* borda das caixas dos links */
+    border-radius: 8px; /* arredondamento das bordas */
+
+    backdrop-filter: blur(4px); /* coloca um efeito que deixa o fundo dos botões embaçados */
+    -webkit-backdrop-filter: blur(4px);
+
+    text-decoration: none;
+    font-weight: 500;
+     transition: background 0.2s;
+}
+
+/* pseudo-selector*/
+ul li a:hover { /* quando passar o mou em cima */
+    background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.05)); /* cor de fundo dos links */
+    
+    border: 1.5px solid var(--text-color); /* borda das caixas dos links */
+}
+
+/* social-links*/
+#social-links {
+    display: flex; /* aqui o display flex habilita o gap */
+    justify-content: center;    /* alinha os icones ao centro */
+    padding: 24px 0;    /* padding de 24px em cima  e em baixo e 0 nas laterais */
+    font-size: 24px;    /* tamanho dos icones */
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);  
+}
+
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
