@@ -45,11 +45,10 @@ body {
 
 
 #container {    /* ajuste da borda do profile*/
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     margin: auto;   /* coloca margem de 56px em cima, auto nas laterais e 0  em baixo*/
-    padding: 0px 24px;    /* padding de 0px em cima e em baixo e 24px nas laterais*/
-    border: 1px solid ;
-    height: 100%;
+    padding: 0 24px;    /* padding de 0px em cima e em baixo e 24px nas laterais*/ 
 }
 
 /*profile*/
@@ -112,7 +111,7 @@ ul {
     list-style: none; /* tira as marcações */
     display: flex; /* habilita outras funcionalidades */
     flex-direction: column;
-    gap: 16px; /* espaçamento entre os links */
+    gap: 13px; /* espaçamento entre os links */
     
 }
 
