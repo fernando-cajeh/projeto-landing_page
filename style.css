@@ -88,11 +88,16 @@ body {
     left: 0;
     z-index: 1;/*coloca o botão na camada 1 do eixo z*/
     transform: translateY(-50%);/*posicionando o botão no centro da barrinhaverticalmente*/
+
+    animation: slide-back 0.2s; /* faz o botão deslizar na barrinha */
 }
 
 .light #switch button {
-    right: 0;/* coloca o botão á direita da div*/
-    left: initial;
+    animation: slide-in 0.2s forwards; /* faz o botão deslizar na barrinha */
+}
+
+#switch button:hover {
+    outline: 8px solid var(--surface-color); /* faz uma borda no botão quando passa o mouse */  
 }
 
 #switch span { /*ajuste da barrinha do botão*/
@@ -179,5 +184,25 @@ footer {
 
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg)
+    }
+}
+
+/* animation */
+/* faz o botão deslizar na barrinha */
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
