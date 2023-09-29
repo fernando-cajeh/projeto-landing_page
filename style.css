@@ -1,15 +1,30 @@
-body {
-    background-image: url(./assets/bg-mobile.jpg);/* link da imagem de fundo*/
-    background-repeat: no-repeat;   /* para não repetir a imagem de fundo*/
-    background-position: top center;    /*para centralizar a imagem de fundo, começando do topo*/
-    background-size: cover; /* faz a imagem de fundo preencher toda a tela*/
-}
 
 * { /* resetando o css do navegador*/
     margin: 0;
     padding: 0;
     box-sizing:border-box; /* ajusta o tamanho da caixa a partir da borda*/
 }
+
+
+body * { /* seleciona todos os elementos do body*/
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color); /* cor das fontes*/
+    
+}
+
+
+body {
+    /*
+    background-image: url(./assets/bg-mobile.jpg); /* link da imagem de fundo
+    background-repeat: no-repeat;   /* para não repetir a imagem de fundo
+    background-position: top center;    /*para centralizar a imagem de fundo, começando do topo
+    background-size: cover; /* faz a imagem de fundo preencher toda a tela
+    */
+    
+    background: var(--bg-url) no-repeat top center/cover; /* variavel da cor do background*/
+    
+}
+
 
 :root {     /*sudo-selector para criar as variáveis de cores */
     --text-color: white;    /* variável da cor branca */
@@ -27,26 +42,20 @@ body {
     --switch-bg-url: url(./assets/sun.svg);/*variável do desenho do botão*/
 }
 
-body {
-    background: var(--bg-url) no-repeat top center/cover; /* variavel da cor do background*/
-}
 
-body * { /* seleciona todos os elementos do body*/
-    font-family: 'Inter', sans-serif;
-    color: var(--text-color); /* cor das fontes*/
-}
 
 #container {    /* ajuste da borda do profile*/
-    /*border: 1px solid green;*/
     width: 360px;
-    margin: 56px auto 0px;   /* coloca margem de 56px em cima, auto nas laterais e 0  em baixo*/
+    margin: auto;   /* coloca margem de 56px em cima, auto nas laterais e 0  em baixo*/
     padding: 0px 24px;    /* padding de 0px em cima e em baixo e 24px nas laterais*/
+    border: 1px solid ;
+    height: 100%;
 }
 
 /*profile*/
 #profile {  /* posicionamento dos elementos do profile*/
     text-align: center; /* centralizando a imagem na div*/
-    padding: 24px;
+    padding: 24px 24px 0 ;
 }
 
 #profile img {
@@ -108,7 +117,6 @@ ul {
 }
 
 ul li a {
-    /*border: 1px solid green;*/
     display: flex;
     align-items: center; /* alinha na horizontal */
     justify-content: center; /* alinha na vertical */
@@ -138,7 +146,7 @@ ul li a:hover { /* quando passar o mou em cima */
 #social-links {
     display: flex; /* aqui o display flex habilita o gap */
     justify-content: center;    /* alinha os icones ao centro */
-    padding: 24px 0;    /* padding de 24px em cima  e em baixo e 0 nas laterais */
+    padding: 24px 0 0;    /* padding de 24px em cima, 0 nas laterais e 0 em baixo */
     font-size: 24px;    /* tamanho dos icones */
 }
 
@@ -157,7 +165,7 @@ ul li a:hover { /* quando passar o mou em cima */
 }
 
 footer {
-    padding: 24px 0;
+    padding: 24px 0 32px;
     text-align: center;
     font-size: 14px;
 }
