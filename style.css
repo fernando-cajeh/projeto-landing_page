@@ -22,7 +22,7 @@ body {
     */
     
     background: var(--bg-url) no-repeat top center/cover; /* variavel da cor do background*/
-    
+    height: 100vh; /* faz o conteudo ocupar a largura total da tela */
 }
 
 
